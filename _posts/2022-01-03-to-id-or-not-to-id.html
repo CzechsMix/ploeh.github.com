@@ -374,3 +374,22 @@ content-type: application/json; charset=utf-8
 		When you need to model interactions where you <em>must not</em> supply an ID on create, but representations have IDs when you query the resources, don't reach for inheritance. Wrap the data in a generic container that contains the ID and a generic payload. You can do this in languages that support parametric polymorphism (AKA <em>generics</em>).
 	</p>
 </div>
+<div id="comments">
+ 	<hr />
+ 	<h2 id="comments-header">Comments</h2>
+	<div class="comment" id="Didn't see how to obtain an id">
+		<div class="comment-author">Sam Ferree</div>
+		<div class="comment-content">
+			<p>
+				Is there a reason to have the request data that comes in as UserForCreation object? If it's purpose is to contain the information needed to create a user from some request, could it not be called CreateUserRequest?
+			</p>
+			<p>
+				It seems to me that this would alleviate the confusion between a User which must have an Id and a request to create a User which contains all the data necessary, but not an Id. If we wanted some time by which would could determin if a thing is identifiable, could we just use an interface Identifiable which requires a public Id property?
+			</p>
+			<p>
+				My objects take a similar shape and it never occured to me that the UserForCreation was anything other than a CreateUserRequest, so I'm wondering if I missed something.
+			</p>
+		</div>
+		<div class="comment-date">2022-01-03 12:21 UTC</div>
+	</div>
+</div>
